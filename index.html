@@ -148,6 +148,25 @@
             cursor: pointer;
         }
 
+        @media (max-width: 767px) {
+            .music-player-btn {
+                width: 38px;
+                height: 38px;
+                padding: 0 !important;
+                justify-content: center;
+                border-radius: 50% !important;
+                top: 1rem;
+                left: 1rem;
+            }
+            .music-player-btn #music-label {
+                display: none;
+            }
+            .music-player-btn .music-icon {
+                font-size: 16px !important;
+                margin: 0 !important;
+            }
+        }
+
         .music-player-btn.active .music-icon {
             animation: rotate 4s linear infinite;
         }
@@ -818,7 +837,7 @@
                 <div id="seal"
                     class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[50] transition-all duration-700 ease-in-out">
                     <div class="wax-seal-container group-hover:scale-110">
-                        <img src="img/sello de rosa.png" alt="Abrir" class="wax-seal-img" id="seal-img" data-t-alt="seal_alt" />
+                        <img src="img/sello manzana.png" alt="Abrir" class="wax-seal-img" id="seal-img" data-t-alt="seal_alt" />
                     </div>
                 </div>
             </div>
@@ -894,6 +913,13 @@
             </div>
         </section>
 
+        <!-- Separator below Jesús Ángel -->
+        <div class="flex items-center justify-center gap-3 -mt-12 mb-12">
+            <div class="h-[0.5px] w-8 bg-bright-gold/40"></div>
+            <div class="w-1.5 h-1.5 rotate-45 border border-bright-gold/60"></div>
+            <div class="h-[0.5px] w-8 bg-bright-gold/40"></div>
+        </div>
+ 
         <section class="px-14 text-center space-y-12 mb-20">
             <div class="space-y-6">
                 <p class="intimate-dedication" data-t="intro_text">
@@ -908,8 +934,15 @@
                 <p class="intimate-dedication" data-t="new_stage">
                     Hoy comienzo una nueva etapa de mi vida con fe, esperanza y gran alegría.
                 </p>
-                <div class="px-6 text-center space-y-12">
-                    <div class="space-y-8 pt-8">
+                <!-- Separator above Mis Padres -->
+                <div class="flex items-center justify-center gap-3 py-6">
+                    <div class="h-[0.5px] w-8 bg-bright-gold/40"></div>
+                    <div class="w-1.5 h-1.5 rotate-45 border border-bright-gold/60"></div>
+                    <div class="h-[0.5px] w-8 bg-bright-gold/40"></div>
+                </div>
+
+                <div class="px-6 text-center">
+                    <div class="space-y-8">
                         <h3 class="text-2xl font-display italic font-semibold gold-metallic-text"
                             data-t="parents_title">Mis Padres</h3>
                         <div class="space-y-1">
@@ -918,10 +951,24 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Separator below Agustín Avila -->
+                <div class="flex items-center justify-center gap-3 py-6">
+                    <div class="h-[0.5px] w-8 bg-bright-gold/40"></div>
+                    <div class="w-1.5 h-1.5 rotate-45 border border-bright-gold/60"></div>
+                    <div class="h-[0.5px] w-8 bg-bright-gold/40"></div>
+                </div>
+
                 <div class="space-y-8 pt-8 px-6">
                     <p class="intimate-dedication mb-6" data-t="godparents_intro">
                         A mis padrinos, gracias por guiar mi camino con su ejemplo, por sostenernos con sus oraciones y por acompañarme en este día tan especial.
                     </p>
+                    <!-- Separator above Mis Padrinos -->
+                    <div class="flex items-center justify-center gap-3 py-6">
+                        <div class="h-[0.5px] w-8 bg-bright-gold/40"></div>
+                        <div class="w-1.5 h-1.5 rotate-45 border border-bright-gold/60"></div>
+                        <div class="h-[0.5px] w-8 bg-bright-gold/40"></div>
+                    </div>
                     <h3 class="text-2xl font-display italic font-semibold gold-metallic-text"
                         data-t="godparents_title">Mis Padrinos</h3>
                     <div class="space-y-1">
@@ -1099,9 +1146,9 @@
             </p>
         </section>
 
-        <section class="px-10 pt-20 pb-20 border-t border-bright-gold/10 text-center">
+        <section class="px-10 pt-20 pb-20 text-center">
             <div class="text-center mb-10">
-                <h3 class="text-3xl font-display italic mb-2" data-t="rsvp_title">R.S.V.P.</h3>
+                <h3 class="text-2xl font-display italic mb-2" data-t="rsvp_title">Confirme su asistencia</h3>
                 <p class="text-sm uppercase tracking-[0.3em] text-deep-grey font-medium" data-t="rsvp_deadline">
                     Favor de
                     confirmar antes del 1
@@ -1385,7 +1432,7 @@
                 envelope_box: "Caja de sobres",
                 account_name: "Nombre de Cuenta",
                 bank_clabe: "Banco / CLABE",
-                rsvp_title: "R.S.V.P.",
+                rsvp_title: "Confirme su asistencia",
                 rsvp_deadline: "Favor de confirmar antes del 20 de Agosto",
                 confirm_attendance: "Confirmar Asistencia",
                 guest_count_title: "¿Cuántos invitados son?",
@@ -1458,7 +1505,7 @@
                 envelope_box: "Envelope box",
                 account_name: "Account Name",
                 bank_clabe: "Bank / CLABE",
-                rsvp_title: "R.S.V.P.",
+                rsvp_title: "Confirm your attendance",
                 rsvp_deadline: "Please confirm before August 20th",
                 confirm_attendance: "Confirm Attendance",
                 guest_count_title: "How many guests?",
