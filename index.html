@@ -330,6 +330,11 @@
             -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
         }
 
+        .double-feather-mask {
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
+        }
+
 
 
         @media (min-width: 1024px) {
@@ -859,7 +864,7 @@
         </audio>
     </div>
 
-    <main class="w-full max-w-md content-container min-h-screen pb-32">
+    <main class="w-full max-w-md content-container min-h-screen pb-4">
 
         <div class="relative w-full aspect-[4/6] overflow-hidden">
             <img alt="Animalitos del bosque" class="w-full h-full object-cover hero-feather-mask"
@@ -1089,8 +1094,8 @@
                     <circle cx="12" cy="17" r="0.7" fill="currentColor" />
                 </svg>
             </div>
-            <p class="text-xl font-display mb-2" data-t="etiquette">Formal</p>
-            <p class="text-base font-display italic text-deep-grey leading-relaxed" data-t="dress_suggestion">
+            <p class="text-xl font-display mb-2" data-t="etiquette">Casual</p>
+            <p class="text-[10px] font-sans tracking-[0.15em] text-deep-grey mt-2" data-t="dress_suggestion">
             </p>
         </section>
 
@@ -1197,7 +1202,7 @@
 
         <!-- Final Illustration Section (Full Width) -->
         <div class="w-full relative overflow-hidden">
-            <img src="img/pajarito.gif" alt="Pajarito" class="w-full h-auto object-cover hero-feather-mask" />
+            <img src="img/pajarito.gif" alt="Pajarito" class="w-full h-auto object-cover double-feather-mask" />
         </div>
 
         <!-- Final Biblical Quote integrated in Main -->
@@ -1216,14 +1221,14 @@
         </div>
 
         <!-- Gif Decoración / Dancing -->
-        <div class="w-full flex justify-center mt-4 mb-8">
-            <img src="img/dancingdancing.gif" alt="Dancing Decoration" class="w-full max-w-xl h-[280px] md:h-[350px] object-contain px-2 opacity-95" />
+        <div class="w-full relative overflow-hidden mt-4 mb-8">
+            <img src="img/dancingdancing.gif" alt="Dancing Decoration" class="w-full h-auto object-cover double-feather-mask opacity-95" />
         </div>
 
         <!-- Footer / Created by -->
-        <div class="w-full text-center pt-12 pb-6">
+        <div class="w-full text-center pt-12 pb-2">
             <p class="font-sans text-[10px] text-deep-grey/70 tracking-wider flex items-center justify-center gap-1.5">
-                <span>@Created by Laura Galeana</span>
+                <span>@Created by Laura I. C. Galeana</span>
                 <span class="text-deep-grey/30">|</span>
                 <!-- SVG Icon for Email -->
                 <svg class="w-3.5 h-3.5 text-deep-grey/70 inline-block align-middle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1372,8 +1377,8 @@
                 location_button: "Ver ubicación",
                 banquet_label: "Banquete & Celebración",
                 dress_code: "Código de Vestimenta",
-                etiquette: "Vestimenta formal",
-                dress_suggestion: "",
+                etiquette: "Vestimenta casual",
+                dress_suggestion: "Evitar vestir color rojo",
                 wedding_gift: "Regalo de Cumpleaños",
                 gift_text: "Su presencia es mi mejor regalo, pero si quieren tener un detalle conmigo les doy algunas ideas.",
                 view_account: "Ver número de cuenta",
@@ -1445,8 +1450,8 @@
                 location_button: "View location",
                 banquet_label: "Banquet & Celebration",
                 dress_code: "Dress Code",
-                etiquette: "Formal Attire",
-                dress_suggestion: "",
+                etiquette: "Casual Attire",
+                dress_suggestion: "Avoid wearing red",
                 wedding_gift: "Birthday Gift",
                 gift_text: "Your presence is my best gift, but if you'd like to give me a gift, here are some ideas.",
                 view_account: "View account number",
