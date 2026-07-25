@@ -125,7 +125,7 @@
             left: 1.5rem;
             /* Opposite side for balance or near right */
             z-index: 300;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             padding: 0.5rem 1rem;
             border-radius: 99px;
@@ -133,13 +133,18 @@
             font-size: 10px;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: #7a5a3a;
-            border: 1px solid rgba(122, 90, 58, 0.4);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            color: #8a6623 !important;
+            border: 2.5px solid transparent !important;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), 
+                              linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%) !important;
+            background-origin: border-box !important;
+            background-clip: padding-box, border-box !important;
+            box-shadow: 0 4px 15px rgba(170, 119, 28, 0.15), 
+                        inset 0 1px 1px rgba(255, 255, 255, 0.7) !important;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             cursor: pointer;
         }
 
@@ -148,8 +153,12 @@
         }
 
         .music-player-btn:hover {
-            transform: scale(1.1);
-            background: white;
+            transform: scale(1.05) translateY(-1px) !important;
+            background-image: linear-gradient(white, white), 
+                              linear-gradient(135deg, #fcf6ba 0%, #bf953f 25%, #aa771c 50%, #fbf5b7 75%, #b38728 100%) !important;
+            box-shadow: 0 6px 16px rgba(170, 119, 28, 0.25), 
+                        inset 0 1px 2px rgba(255, 255, 255, 0.9) !important;
+            color: #aa771c !important;
         }
 
         @keyframes rotate {
@@ -213,22 +222,22 @@
             /* Ultra-Premium Liquid Gold Chrome - Mimicking the new reference image */
             position: relative;
             background: linear-gradient(to bottom,
-                    #231600 0%,
-                    #5d3e1a 10%,
-                    #82641a 30%,
-                    #d4af37 45%,
+                    #5d3e1a 0%,
+                    #82641a 15%,
+                    #b38728 35%,
+                    #d4af37 48%,
                     #ffffff 50%,
-                    #d4af37 55%,
-                    #82641a 75%,
-                    #5d3e1a 90%,
-                    #231600 100%);
+                    #d4af37 52%,
+                    #b38728 65%,
+                    #82641a 85%,
+                    #5d3e1a 100%);
             color: #d4af37;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
 
             /* Advanced SVG filter for physical volume and specular glint */
-            filter: url(#liquid-gold-chrome) drop-shadow(0 3px 6px rgba(0, 0, 0, 0.45));
+            filter: url(#liquid-gold-chrome) drop-shadow(0 3px 6px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 4px rgba(212, 175, 55, 0.35));
 
             display: inline-block;
             line-height: 1.1;
@@ -298,7 +307,7 @@
             content: "";
             position: fixed;
             inset: 0;
-            background-image: url("img/fondo flores.jpg");
+            background-image: url("img/flores.jpeg");
             background-size: 800px;
             background-repeat: repeat;
             opacity: 0.15;
@@ -494,6 +503,10 @@
             pointer-events: none;
             z-index: 100;
             transform-style: preserve-3d;
+        }
+
+        .petal img {
+            filter: url(#pink-to-red);
         }
 
         @keyframes fall {
@@ -708,6 +721,29 @@
             z-index: 10;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
+
+        /* Metallic gold outline for RSVP and Guestbook buttons */
+        #open-rsvp-modal, #btn-send-message {
+            border: 2.5px solid transparent !important;
+            background-image: linear-gradient(white, white), 
+                              linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%) !important;
+            background-origin: border-box !important;
+            background-clip: padding-box, border-box !important;
+            box-shadow: 0 4px 12px rgba(170, 119, 28, 0.15), 
+                        inset 0 1px 1px rgba(255, 255, 255, 0.7) !important;
+            color: #8a6623 !important;
+            font-weight: 700 !important;
+            transition: all 0.4s ease !important;
+        }
+
+        #open-rsvp-modal:hover, #btn-send-message:hover {
+            background-image: linear-gradient(#fafafa, #fafafa), 
+                              linear-gradient(135deg, #fcf6ba 0%, #bf953f 25%, #aa771c 50%, #fbf5b7 75%, #b38728 100%) !important;
+            box-shadow: 0 6px 16px rgba(170, 119, 28, 0.25), 
+                        inset 0 1px 2px rgba(255, 255, 255, 0.9) !important;
+            color: #aa771c !important;
+            transform: translateY(-1px);
+        }
     </style>
 </head>
 
@@ -725,7 +761,7 @@
                 <div class="absolute inset-0 paper-texture border border-black/[0.03] rounded-sm bg-[#FFFCE0]">
                     <!-- Subtle floral pattern as liner -->
                     <div class="absolute inset-x-8 inset-y-12 opacity-[0.03]"
-                        style="background-image: url('img/fondo flores.jpg'); background-size: 300px; filter: grayscale(1);">
+                        style="background-image: url('img/flores.jpeg'); background-size: 300px; filter: grayscale(1);">
                     </div>
                 </div>
 
@@ -817,7 +853,7 @@
     <div id="music-toggle" class="music-player-btn">
         <div class="pulse-effect"></div>
         <span class="material-symbols-outlined music-icon text-[14px]">music_note</span>
-        <span id="music-label">Música: OFF</span>
+        <span id="music-label">Música: APAGADA</span>
         <audio id="bg-music" loop>
             <source src="img/hugs_and_kisses.m4a" type="audio/mp4">
         </audio>
@@ -869,7 +905,7 @@
                 </p>
                 <div class="px-6 text-center space-y-12">
                     <div class="space-y-8 pt-8">
-                        <h3 class="text-2xl font-display italic font-semibold" style="color: #C5A880;"
+                        <h3 class="text-2xl font-display italic font-semibold gold-metallic-text"
                             data-t="parents_title">Mis Padres</h3>
                         <div class="space-y-1">
                             <p class="text-lg font-display">Eva Galeana Rodríguez</p>
@@ -881,7 +917,7 @@
                     <p class="intimate-dedication mb-6" data-t="godparents_intro">
                         A mis padrinos, gracias por guiar mi camino con su ejemplo, por sostenernos con sus oraciones y por acompañarme en este día tan especial.
                     </p>
-                    <h3 class="text-2xl font-display italic font-semibold" style="color: #C5A880;"
+                    <h3 class="text-2xl font-display italic font-semibold gold-metallic-text"
                         data-t="godparents_title">Mis Padrinos</h3>
                     <div class="space-y-1">
                         <p class="text-lg font-display">Ana Delia Tania Cortés Martínez</p>
@@ -1057,45 +1093,6 @@
             <p class="text-base font-display italic text-deep-grey leading-relaxed" data-t="dress_suggestion">
             </p>
         </section>
-        <section class="px-10 py-24 text-center">
-            <h3 class="text-2xl font-display italic mb-8" data-t="wedding_gift">Regalo de Bodas</h3>
-            <p class="font-display italic text-lg text-deep-grey leading-relaxed mb-12" data-t="gift_text">
-                Su presencia es nuestro mejor regalo, pero si quieren tener un detalle con nosotros les
-                damos
-                algunas
-                ideas.
-            </p>
-            <div class="max-w-[320px] mx-auto space-y-16">
-                <!-- Bank Account Card -->
-                <div
-                    class="shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-bright-gold/10 text-left relative group overflow-hidden">
-                    <button
-                        class="accordion-toggle w-full p-10 flex items-center gap-3 text-charcoal hover:bg-black/[0.01] transition-colors focus:outline-none">
-                        <span
-                            class="material-symbols-outlined text-sm transition-transform duration-300">expand_more</span>
-                        <span class="intimate-dedication !text-2xl !leading-none text-charcoal"
-                            data-t="view_account">Ver
-                            número de cuenta</span>
-                    </button>
-                    <div
-                        class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out px-10">
-                        <div class="pb-10 space-y-3 text-charcoal/90 border-t border-bright-gold/5 pt-6">
-                            <p class="font-display text-xl leading-tight">Banorte</p>
-                            <p class="font-display text-xl leading-tight tracking-[0.05em]">0725 4001 3532 0270 78
-                            </p>
-                            <p class="font-display text-xl leading-tight">Laura Isela Castillo Galeana</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Caja de sobres -->
-                <div class="flex flex-col items-center space-y-4">
-                    <span class="material-symbols-outlined text-5xl text-charcoal">mail</span>
-                    <p class="intimate-dedication !text-2xl !leading-none text-charcoal" data-t="envelope_box">
-                        Caja de sobres</p>
-                </div>
-            </div>
-        </section>
 
         <section class="px-10 pt-20 pb-20 border-t border-bright-gold/10 text-center">
             <div class="text-center mb-10">
@@ -1140,7 +1137,7 @@
                         <input type="text" id="guestbook-signature"
                             class="w-full bg-transparent border-b border-bright-gold/20 focus:border-bright-gold transition-colors py-4 font-display text-base text-charcoal/80 placeholder:text-deep-grey/20 placeholder:font-sans placeholder:text-[10px] placeholder:uppercase placeholder:tracking-[0.2em] focus:ring-0"
                             data-t-placeholder="guestbook_signature_placeholder"
-                            placeholder="Con cariño... (ej: Familia Pérez)">
+                            placeholder="Con cariño... (Tu nombre)">
                     </div>
 
                     <button id="btn-send-message"
@@ -1171,18 +1168,18 @@
                 btn.disabled = true;
                 btn.innerText = currentLang === 'es' ? 'Enviando...' : 'Sending...';
 
-                const formData = new FormData();
-                formData.append('Type', 'Guestbook');
-                formData.append('Message', message);
-                formData.append('Signature', signature);
-                formData.append('Date', new Date().toLocaleString());
+                const params = new URLSearchParams();
+                params.append('to_email', 'angel_dior2011@icloud.com');
+                params.append('type', 'Guestbook');
+                params.append('celebrant', 'Jesús Ángel');
+                params.append('message', message);
+                params.append('signature', signature);
 
                 try {
-                    // Using the same URL as RSVP if applicable, ensure GAS handles 'Type' or specific fields
-                    await fetch('https://script.google.com/macros/s/AKfycbw_dBFq4nGIMGqp0za2Hf35HraI4f6NELamDtPEKF516IrnoVOU0psoQuTxOvL76AJDiw/exec', {
+                    await fetch('https://script.google.com/macros/s/AKfycbzQbhOggBiD6VTiKaxwJbX1yRkDtVFRJRklV5X_1cI6Av2znt_nwU1zbDhVECzJEhntCg/exec', {
                         method: 'POST',
                         mode: 'no-cors',
-                        body: formData
+                        body: params
                     });
 
                     // Hide inputs and button, show success
@@ -1190,6 +1187,7 @@
                     btn.classList.add('hidden');
                     successMsg.classList.remove('hidden');
                 } catch (e) {
+                    console.error('Guestbook submit error:', e);
                     alert(currentLang === 'es' ? 'Ocurrió un error al enviar, por favor intenta de nuevo' : 'An error occurred while sending, please try again');
                     btn.disabled = false;
                     btn.innerText = currentLang === 'es' ? 'Enviar mensaje con amor' : 'Send message with love';
@@ -1222,13 +1220,12 @@
             <p class="font-sans text-[10px] text-deep-grey/70 tracking-wider flex items-center justify-center gap-1.5">
                 <span>@Created by Laura Galeana</span>
                 <span class="text-deep-grey/30">|</span>
-                <!-- SVG Icon for Instagram -->
+                <!-- SVG Icon for Email -->
                 <svg class="w-3.5 h-3.5 text-deep-grey/70 inline-block align-middle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
-                <a href="https://www.instagram.com/laugaleann" target="_blank" class="hover:text-bright-gold transition-colors">laugaleann</a>
+                <a href="mailto:galelau6@gmail.com" class="hover:text-bright-gold transition-colors">galelau6@gmail.com</a>
             </p>
         </div>
     </main>
@@ -1252,11 +1249,11 @@
             if (isMusicPlaying) {
                 bgMusic.pause();
                 musicBtn.classList.remove('active');
-                label.innerText = currentLang === 'es' ? 'Música: OFF' : 'Music: OFF';
+                label.innerText = currentLang === 'es' ? 'Música: APAGADA' : 'Music: OFF';
             } else {
                 bgMusic.play();
                 musicBtn.classList.add('active');
-                label.innerText = currentLang === 'es' ? 'Música: ON' : 'Music: ON';
+                label.innerText = currentLang === 'es' ? 'Música: ENCENDIDA' : 'Music: ON';
             }
             isMusicPlaying = !isMusicPlaying;
         }
@@ -1408,7 +1405,7 @@
                 rsvp_contact_note: "Tu confirmación ha sido guardada en nuestra lista de invitados.",
                 guestbook_text: "Déjame un mensaje con buenos deseos para esta nueva etapa",
                 guestbook_message_placeholder: "Escribe aquí tus palabras...",
-                guestbook_signature_placeholder: "Con cariño... (ej: Familia Pérez)",
+                guestbook_signature_placeholder: "Con cariño... (Tu nombre)",
                 guestbook_submit: "Enviar mensaje con amor",
                 guestbook_success: "¡Gracias por tus bellas palabras!"
             },
@@ -1481,7 +1478,7 @@
                 rsvp_contact_note: "Your confirmation has been saved in our guest list.",
                 guestbook_text: "Leave me a message with your best wishes for this new stage",
                 guestbook_message_placeholder: "Write your words here...",
-                guestbook_signature_placeholder: "With love... (eg: Pérez Family)",
+                guestbook_signature_placeholder: "With love... (Your name)",
                 guestbook_submit: "Send message with love",
                 guestbook_success: "Thank you for your beautiful words!"
             }
@@ -1540,8 +1537,13 @@
             // Update Music Label as well
             const musicLabel = document.getElementById('music-label');
             if (musicLabel) {
-                const state = isMusicPlaying ? 'ON' : 'OFF';
-                musicLabel.innerText = currentLang === 'es' ? `Música: ${state}` : `Music: ${state}`;
+                if (currentLang === 'es') {
+                    const state = isMusicPlaying ? 'ENCENDIDA' : 'APAGADA';
+                    musicLabel.innerText = `Música: ${state}`;
+                } else {
+                    const state = isMusicPlaying ? 'ON' : 'OFF';
+                    musicLabel.innerText = `Music: ${state}`;
+                }
             }
         }
 
@@ -1616,6 +1618,14 @@
 
             <!-- 5. Blend reflections with the original gradient -->
             <feBlend in="SourceGraphic" in2="specOutClip" mode="screen" result="finalChrome" />
+        </filter>
+        <filter id="pink-to-red">
+            <feColorMatrix type="matrix" values="
+                1.3   0     0   0   0
+               -1.2  1.8    0   0   0
+               -1.5   0    1.8  0   0
+                0     0     0   1   0
+            " />
         </filter>
     </svg>
     <!-- RSVP Modal -->
@@ -1724,7 +1734,7 @@
             try {
                 // To fetch these limits, the Google Apps Script needs a doGet(e) method returning JSON.
                 // If it fails, we assume 0 used slots for now.
-                const resp = await fetch('https://script.google.com/macros/s/AKfycbw_dBFq4nGIMGqp0za2Hf35HraI4f6NELamDtPEKF516IrnoVOU0psoQuTxOvL76AJDiw/exec?action=getStatus');
+                const resp = await fetch('https://script.google.com/macros/s/AKfycbzQbhOggBiD6VTiKaxwJbX1yRkDtVFRJRklV5X_1cI6Av2znt_nwU1zbDhVECzJEhntCg/exec?action=getStatus');
                 if (!resp.ok) throw new Error("Status API not available");
                 const data = await resp.json();
                 if (data) {
@@ -1851,23 +1861,30 @@
 
             const namesArr = Array.from(inputs).map(i => i.value);
 
-            const formData = new FormData();
-            formData.append('Guest Count', guestCount);
-            formData.append('Names', namesArr.join(', '));
-            formData.append('Wants Hotel', 'No');
+            const params = new URLSearchParams();
+            params.append('to_email', 'angel_dior2011@icloud.com');
+            params.append('type', 'RSVP');
+            params.append('celebrant', 'Jesús Ángel');
+            params.append('guest_count', guestCount);
+            params.append('names', namesArr.join(', '));
 
             const submitBtn = document.getElementById('btn-submit');
             submitBtn.disabled = true;
             submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
 
-            fetch('https://script.google.com/macros/s/AKfycbw_dBFq4nGIMGqp0za2Hf35HraI4f6NELamDtPEKF516IrnoVOU0psoQuTxOvL76AJDiw/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbzQbhOggBiD6VTiKaxwJbX1yRkDtVFRJRklV5X_1cI6Av2znt_nwU1zbDhVECzJEhntCg/exec', {
                 method: 'POST',
                 mode: 'no-cors',
-                body: formData
-            }).finally(() => {
+                body: params
+            }).then(() => {
                 document.getElementById('step-2').classList.add('hidden');
                 document.getElementById('step-4').classList.remove('hidden');
                 setTimeout(closeModal, 8000);
+            }).catch(err => {
+                console.error('RSVP submit error:', err);
+                alert(currentLang === 'es' ? 'Ocurrió un error al enviar la confirmación. Por favor, intenta de nuevo.' : 'An error occurred. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
             });
         });
 
